@@ -14,7 +14,7 @@ public class PlaylistController {
     private final PlaylistService playlistService;
 
    @GetMapping("/playlist")
-   public String menu(Model model) {
+   public String playlist(Model model) {
        model.addAttribute("playlist", playlistService.findAll());
        return "playlist";
    }
