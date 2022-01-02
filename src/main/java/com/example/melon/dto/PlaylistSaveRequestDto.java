@@ -10,17 +10,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PlaylistSaveRequestDto {
     private String song;
+    private String artist;
     private String songLink;
 
     @Builder
-    public PlaylistSaveRequestDto(String song, String songLink) {
+    public PlaylistSaveRequestDto(String song, String artist, String songLink) {
         this.song = song;
+        this.artist = artist;
         this.songLink = songLink;
     }
 
     public Playlist toEntity() {
         return Playlist.builder()
             .song(song)
+            .artist(artist)
             .songLink(songLink)
             .build();
     }

@@ -13,12 +13,14 @@ import lombok.RequiredArgsConstructor;
 public class PlaylistController {
     private final PlaylistService playlistService;
 
+    //localhost:8080/playlist error
    @GetMapping("/playlist")
    public String playlist(Model model) {
        model.addAttribute("playlist", playlistService.findAll());
        return "playlist";
    }
 
+   //localhost:8080/rndplaylist 들어가짐
    @GetMapping("/rndplaylist")
    public String rndplaylist() {
        return "rndplaylist";

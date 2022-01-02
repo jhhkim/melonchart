@@ -38,7 +38,7 @@ public class PlaylistService {
     public Long update(Long id, PlaylistSaveRequestDto requestDto) {
         Playlist playlist = playlistRepository.findById(id)
             .orElseThrow(()-> new IllegalArgumentException("수정할 노래가 없다." + id));
-        playlist.update(requestDto.getSong(), requestDto.getSongLink());
+        playlist.update(requestDto.getSong(), requestDto.getArtist(), requestDto.getSongLink());
         return id;
     }
 

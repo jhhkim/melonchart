@@ -23,9 +23,9 @@ public class IndexController {
         return "melon";
     }
 
-    @GetMapping("/playlist")
-    public String playlist()
-    {
-        return "playlist";
-    }
+    // @GetMapping("/playlist")
+    // public String playlist()
+    // {
+    //     return "playlist";
+    // }
 }

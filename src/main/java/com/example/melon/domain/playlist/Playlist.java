@@ -21,17 +21,23 @@ public class Playlist {
     @Column(length = 50, nullable = false)
     private String song;
 
+    @Column(length = 50, nullable = false)
+    private String artist;
+
     @Column(length = 500, nullable = false)
     private String songLink;
 
     @Builder
-    public Playlist(String song, String songLink) {
+    public Playlist(String song, String artist, String songLink) {
         this.song = song;
+        this.artist = artist;
         this.songLink = songLink;
     }
 
-    public void update(String song, String songLink) {
+    public void update(String song, String artist, String songLink) {
         this.song = song;
+        this.artist = artist;
         this.songLink = songLink;
     }
+
 }
