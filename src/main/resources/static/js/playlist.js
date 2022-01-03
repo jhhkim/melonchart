@@ -100,8 +100,11 @@ $(document).ready(function() {
             console.log(result.song);
             console.log(result.artist);
             console.log(result.songLink);
-            var html = "오늘의 노래는 <b> " +result.artist+"</b>의 <b>"+ result.song +" </b>입니다. <br> 스밍하러 가요~<br>";
-            html += '<source src="' + result.songLink + result.song + '" width="320" height="240">';
+            var html = "오늘의 노래는 <b> " +result.artist+"</b>의 <b>"+"<a href= '"+ result.songLink +"' target= '_blank'>" + result.song +"</a></b>입니다. <br> 노래 제목을 클릭하면 음원 영상으로 이동합니다.<br>";
+        
+            //https://www.youtube.com/embed/해당동영상고유키값? 꼴이어야하는데 result.songLink는 저런 형태 아니라서 youtube에서 연결 거부함
+            //html += '<embed width="560" height="315" src= " '+ result.songLink +' " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>';
+            
             $("#div1").html(html);
         });
     });  // rndBtn
